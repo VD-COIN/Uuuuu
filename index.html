@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEGOL TECHNOLOGIES COMPANY</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            border: 2px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: fit-content;
+            opacity: 1;
+            transition: opacity 1s ease-out;
+            z-index: 1;
+        }
+
+        .icon {
+            font-size: 60px;
+            color: #00aaff;
+            margin-right: 15px;
+            animation: rotate 2s infinite linear;
+        }
+
+        .text h1 {
+            font-size: 48px;
+            color: #00aaff;
+            margin: 0;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .text h2 {
+            font-size: 24px;
+            color: #333;
+            margin: 0;
+            animation: fadeIn 2s ease-out;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo" id="logo">
+        <div class="icon">&#9881;</div> <!-- Gear icon -->
+        <div class="text">
+            <h1>JEGOL</h1>
+            <h2>TECHNOLOGIES COMPANY</h2>
+        </div>
+    </div>
+ 
+    <script>
+        // Redirect to welcome.html after 7 seconds
+        setTimeout(() => {
+            window.location.href = 'welcome.html';
+        }, 7000);
+
+        // Register the service worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(registration => {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                })
+                .catch(err => {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+        }
+    </script>
+</body>
+</html>
